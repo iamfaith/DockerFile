@@ -1,12 +1,6 @@
 FROM nginx
 
-RUN buildDeps='gcc libc6-dev make' \
-    && sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
-    && apt-get update \
-    && apt-get install -y $buildDeps \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get install vim bash-completion \
-    && rm -rf /var/lib/apt/lists/* \
+RUN apt-get update \
     && cd /tmp && \
     wget http://download.redis.io/redis-stable.tar.gz && \
     tar xvzf redis-stable.tar.gz && \
