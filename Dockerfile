@@ -1,4 +1,5 @@
 FROM nginx
+
 RUN buildDeps='gcc libc6-dev make' \
     && sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
     && apt-get update \
