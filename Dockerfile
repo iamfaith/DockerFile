@@ -30,7 +30,7 @@ RUN \
 VOLUME ["/data", "/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
 
 # Define working directory.
-WORKDIR /data
+#WORKDIR /data
 
 
 
@@ -38,10 +38,10 @@ WORKDIR /data
 EXPOSE 6379
 
 # Define working directory.
-WORKDIR /etc/nginx
+#WORKDIR /etc/nginx
 
 # Define default command.
-CMD nginx&&redis-server /etc/redis/redis.conf
+CMD cd /etc/nginx && nginx && cd /etc/nginx &&redis-server /etc/redis/redis.conf
 
 # Expose ports.
 EXPOSE 80 443
