@@ -1,5 +1,5 @@
 # Pull base image.
-FROM daocloud.io/iamfaith/ubuntu
+FROM xianzixiang/ubuntu
 
 # Install Redis.
 RUN \
